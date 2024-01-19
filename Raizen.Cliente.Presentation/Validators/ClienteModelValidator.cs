@@ -7,8 +7,14 @@ namespace Raizen.Cliente.Presentation.Validators
     {
         public ClienteModelValidator() 
         {
-            RuleFor(clienteModel => clienteModel.Nome).NotNull().NotEmpty().WithMessage("Por favor , informe o nome do cliente");
-
+            RuleFor(clienteModel => clienteModel.Nome).NotNull().NotEmpty().MaximumLength(50);
+            RuleFor(clienteModel => clienteModel.DataNascimento).NotEmpty();
+            RuleFor(clienteModel => clienteModel.Email).NotEmpty().EmailAddress().MaximumLength(50);
+            RuleFor(clienteModel => clienteModel.Logradouro).NotEmpty().MaximumLength(150);
+            RuleFor(clienteModel => clienteModel.Bairro).NotEmpty().MaximumLength(100);
+            RuleFor(clienteModel => clienteModel.Cidade).NotEmpty().MaximumLength(100);
+            RuleFor(clienteModel => clienteModel.UF).NotEmpty().MaximumLength(2);
+            RuleFor(clienteModel => clienteModel.CEP).NotEmpty().MaximumLength(15);
         }
     }
 }

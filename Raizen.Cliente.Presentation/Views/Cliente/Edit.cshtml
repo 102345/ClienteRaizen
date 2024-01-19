@@ -12,7 +12,6 @@
     <div asp-validation-summary="ModelOnly" class="alert-danger"></div>
     <form method="POST" enctype="multipart/form-data" asp-controller="Cliente" asp-action="UpdateCliente">
 
-        @*  <input type="hidden" class="form-control mb-3" asp-for="Operation" value="Insert"> *@
         <input type="hidden" class="form-control mb-3" asp-for="Id">
         <div class="row">
             <div class="col">
@@ -23,28 +22,18 @@
                 <label asp-for="DataNascimento">Data Nascimento</label>
 
             </div>
-            @* <div class="col">
-            <span asp-validation-for="RegionId" class="alert-danger"></span>
-            <label asp-for="RegionId">Region</label>
-            </div> *@
 
         </div>
 
         <div class="row">
             <div class="col">
                 <input type="text" class="form-control" id="Nome" name="Nome" asp-for="Nome" />
-                @*  <span asp-validation-for="Nome" class="alert-danger"></span> *@
+                 <span asp-validation-for="Nome" class="alert-danger"></span>
             </div>
             <div class="col">
-                <input type="text" class="form-control" id="DataNascimento" name="DataNascimento" asp-for="DataNascimento" />
-                @* <span asp-validation-for="DataNascimento" class="alert-danger"></span> *@
+                <input type="text" id="DataNascimento" name="DataNascimento" asp-for="DataNascimento" class="form-control" />
+                <span asp-validation-for="DataNascimento" class="alert-danger"></span>
             </div>
-            @* <div class="col">
-            <select asp-for="RegionId"
-            asp-items="ViewBag.ListRegion" onchange="GetValuesProcessCodeAndDigit(this.value);">
-            </select>
-            </div>
-            <span asp-validation-for="RegionId" class="alert-danger"></span> *@
         </div>
 
         <div class="row">
@@ -59,11 +48,11 @@
         <div class="row">
             <div class="col">
                 <input type="text" class="form-control" id="Email" name="Email" asp-for="Email" />
-                @* <span asp-validation-for="Email" class="alert-danger"></span> *@
+                <span asp-validation-for="Email" class="alert-danger"></span>
             </div>
             <div class="col">
                 <input type="text" class="form-control" id="CEP" name="CEP" asp-for="CEP" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1' );" onKeyPress="if(this.value.length==9) return false;" />
-                @* <span asp-validation-for="CEP" class="alert-danger"></span> *@
+                <span asp-validation-for="CEP" class="alert-danger"></span>
             </div>
         </div>
 
@@ -79,7 +68,7 @@
         <div class="row">
             <div class="col">
                 <input type="text" class="form-control" id="Logradouro" name="Logradouro" asp-for="Logradouro" />
-                @* <span asp-validation-for="Logradouro" class="alert-danger"></span> *@
+                <span asp-validation-for="Logradouro" class="alert-danger"></span>
             </div>
             <div class="col">
                 <input type="text" class="form-control" id="Complemento" name="Complemento" asp-for="Complemento" />
@@ -102,15 +91,15 @@
         <div class="row">
             <div class="col">
                 <input type="text" class="form-control" id="Bairro" name="Bairro" asp-for="Bairro" />
-                @* <span asp-validation-for="Bairro" class="alert-danger"></span> *@
+                <span asp-validation-for="Bairro" class="alert-danger"></span>
             </div>
             <div class="col">
                 <input type="text" class="form-control" id="Cidade" name="Cidade" asp-for="Cidade" />
-                @*  <span asp-validation-for="Cidade" class="alert-danger"></span> *@
+                 <span asp-validation-for="Cidade" class="alert-danger"></span>
             </div>
             <div class="col">
                 <input type="text" class="form-control" id="UF" name="UF" asp-for="UF" />
-                @* <span asp-validation-for="UF" class="alert-danger"></span> *@
+                <span asp-validation-for="UF" class="alert-danger"></span>
             </div>
         </div>
 
@@ -144,3 +133,26 @@
         crossorigin="anonymous"></script>
 
 <script src="~/js/validate/validateCEP.js"></script>
+
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        $("#DataNascimento").datepicker({ dateFormat: 'dd/mm/yyyy', language: "pt-BR" });
+
+        // Inputmask("datetime", {
+        //     inputFormat: "dd/mm/yyyy"
+        // }).mask("#DataNascimento");
+
+        // $("#DataNascimento").change(function () {
+
+        //     if ($("#DataNascimento").val() == '' || moment($("#DataNascimento").val(), "DD/MM/YYYY").toDate() == null) return;
+
+        //     $("#DataNascimento").data('datepicker').selectDate(moment($("#DataNascimento").val(), "DD/MM/YYYY").toDate());
+        //     //moment($("#redeDtInicioInput").val(), "DD/MM/YYYY").format('YYYY-MM-DD')
+        // });
+
+    });
+
+
+</script>

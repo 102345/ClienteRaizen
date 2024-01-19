@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - Gerenciador Clientes Raizen</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/lib/air-datepicker/dist/css/datepicker.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Raizen.Cliente.Presentation.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -40,6 +41,10 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/moment/moment-with-locales.js"></script>
+    <script src="~/lib/air-datepicker/dist/js/datepicker.min.js"></script>
+    <script src="~/lib/inputmask/js/jquery.inputmask.min.js"></script>
+    <script src="~/lib/air-datepicker/dist/js/i18n/datepicker.pt-BR.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -5,13 +5,18 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raizen.Cliente.Presentation", "Raizen.Cliente.Presentation\Raizen.Cliente.Presentation.csproj", "{F4401C46-9B3E-4CB4-81C9-53E4E9B6CC27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raizen.Cliente.Application", "Raizen.Cliente.Application\Raizen.Cliente.Application.csproj", "{4EADAE46-B8B3-4A86-92F5-E38FF4CEB65D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raizen.Cliente.Application", "Raizen.Cliente.Application\Raizen.Cliente.Application.csproj", "{4EADAE46-B8B3-4A86-92F5-E38FF4CEB65D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raizen.Cliente.Domain", "Raizen.Cliente.Domain\Raizen.Cliente.Domain.csproj", "{BCB607DE-23FF-4658-A8E7-499573B8EF52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raizen.Cliente.Domain", "Raizen.Cliente.Domain\Raizen.Cliente.Domain.csproj", "{BCB607DE-23FF-4658-A8E7-499573B8EF52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raizen.Cliente.Common.InfraStructure", "Raizen.Cliente.Common.InfraStructure\Raizen.Cliente.Common.InfraStructure.csproj", "{261AF240-DE6E-494C-A33B-F9E05AFF5A38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raizen.Cliente.Common.InfraStructure", "Raizen.Cliente.Common.InfraStructure\Raizen.Cliente.Common.InfraStructure.csproj", "{261AF240-DE6E-494C-A33B-F9E05AFF5A38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raizen.Cliente.InfraStrucuture", "Raizen.Cliente.InfraStrucuture\Raizen.Cliente.InfraStrucuture.csproj", "{C5B30EDD-B323-4E24-A595-5ED6F6AAAB8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raizen.Cliente.InfraStrucuture", "Raizen.Cliente.InfraStrucuture\Raizen.Cliente.InfraStrucuture.csproj", "{C5B30EDD-B323-4E24-A595-5ED6F6AAAB8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{A7EE0E22-6706-49DE-9B44-38A2F7791B25}"
+	ProjectSection(SolutionItems) = preProject
+		CREATE_DATABASE_TABLE.sql = CREATE_DATABASE_TABLE.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

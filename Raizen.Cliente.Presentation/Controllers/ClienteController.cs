@@ -1,24 +1,11 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Raizen.Cliente.Application.Contracts;
 using Raizen.Cliente.Application.Services;
 
 namespace Raizen.Cliente.Presentation.Controllers
 {
-
-    public static class Extensions
-    {
-        public static void AddToModelState(this ValidationResult result, ModelStateDictionary modelState)
-        {
-            foreach (var error in result.Errors)
-            {
-                modelState.AddModelError(error.PropertyName, error.ErrorMessage);
-            }
-        }
-    }
     public class ClienteController : Controller
     {
         private readonly IMapper _mapper;
@@ -60,10 +47,6 @@ namespace Raizen.Cliente.Presentation.Controllers
 
             if (!validationResult.IsValid)
             {
-                // validationResult.AddToModelState(this.ModelState);
-
-                // Extensions.AddToModelState(validationResult, this.ModelState);
-                ModelState.Clear();
                 foreach (var error in validationResult.Errors)
                 {
                     ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
@@ -88,6 +71,7 @@ namespace Raizen.Cliente.Presentation.Controllers
             
             var cliente = await _clienteService.GetById(id);
 
+
             var clientesModel = _mapper.Map<Domain.Entities.Cliente, ClienteModel>(cliente);
 
             return View(clientesModel);
@@ -104,9 +88,6 @@ namespace Raizen.Cliente.Presentation.Controllers
 
             if (!result.IsValid)
             {
-                //result.AddToModelState(this.ModelState);
-
-                Extensions.AddToModelState(result, this.ModelState);
 
                 return View("Edit", clienteModel);
 
