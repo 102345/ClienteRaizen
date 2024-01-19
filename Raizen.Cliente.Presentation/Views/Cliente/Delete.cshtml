@@ -1,0 +1,132 @@
+﻿@model Raizen.Cliente.Application.Contracts.ClienteModel
+
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<h2>@ViewBag.message</h2>
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Excluir Cliente</h2>
+    </div>
+    <form method="post" enctype="multipart/form-data" asp-controller="Cliente" asp-action="DeleteCliente">
+
+        @*  <input type="hidden" class="form-control mb-3" asp-for="Operation" value="Insert"> *@
+        <input type="hidden" class="form-control mb-3" asp-for="Id">
+        <div class="row">
+            <div class="col">
+                <label asp-for="Nome">Nome</label>
+
+            </div>
+            <div class="col">
+                <label asp-for="DataNascimento">Data Nascimento</label>
+
+            </div>
+            @* <div class="col">
+            <span asp-validation-for="RegionId" class="alert-danger"></span>
+            <label asp-for="RegionId">Region</label>
+            </div> *@
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="Nome" name="Nome" asp-for="Nome" readonly="readonly" />
+                @*  <span asp-validation-for="Nome" class="alert-danger"></span> *@
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="DataNascimento" name="DataNascimento" asp-for="DataNascimento" readonly="readonly" />
+                @* <span asp-validation-for="DataNascimento" class="alert-danger"></span> *@
+            </div>
+           
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label class="form-label">Email</label>
+            </div>
+            <div class="col">
+                <label class="form-label">CEP</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="Email" name="Email" asp-for="Email" readonly="readonly" />
+                @* <span asp-validation-for="Email" class="alert-danger"></span> *@
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="CEP" name="CEP" asp-for="CEP" readonly="readonly"  />
+                @* <span asp-validation-for="CEP" class="alert-danger"></span> *@
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label asp-for="Logradouro">Logradouro</label>
+            </div>
+            <div class="col">
+                <label asp-for="Complemento">Complemento</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="Logradouro" name="Logradouro" asp-for="Logradouro" readonly="readonly"  />
+                @* <span asp-validation-for="Logradouro" class="alert-danger"></span> *@
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="Complemento" name="Complemento" asp-for="Complemento" readonly="readonly" />
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <label asp-for="Bairro">Bairro</label>
+            </div>
+            <div class="col">
+                <label asp-for="Cidade">Cidade</label>
+            </div>
+            <div class="col">
+                <label asp-for="UF">UF</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="Bairro" name="Bairro" asp-for="Bairro" readonly="readonly" />
+                @* <span asp-validation-for="Bairro" class="alert-danger"></span> *@
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="Cidade" name="Cidade" asp-for="Cidade" readonly="readonly" />
+                @*  <span asp-validation-for="Cidade" class="alert-danger"></span> *@
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="UF" name="UF" asp-for="UF" readonly="readonly" />
+                @* <span asp-validation-for="UF" class="alert-danger"></span> *@
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="float-start">
+                    <button type="submit" class="btn btn-primary" value="OK">
+                        <svg bootstrap-icon="Check" width="24" height="24"></svg>
+                        OK
+                    </button>
+                    <a class="btn btn-danger" href="@Url.Action("Index", "Cliente")">
+                        <svg bootstrap-icon="XCircle" width="24" height="24"></svg>
+                        Cancel
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
