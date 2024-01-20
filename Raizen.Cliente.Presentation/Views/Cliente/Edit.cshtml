@@ -4,6 +4,7 @@
     ViewData["Title"] = "Editar Cliente";
 }
 
+
 <h2>@ViewBag.message</h2>
 <div class="container shadow p-5">
     <div class="row pb-2">
@@ -128,6 +129,7 @@
 
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
@@ -136,7 +138,8 @@
 
 <script type="text/javascript">
 
-    document.addEventListener('DOMContentLoaded', () => {
+
+    $(document).ready(function () {
 
         Inputmask("datetime", {
             inputFormat: "dd/mm/yyyy";
@@ -145,19 +148,6 @@
 
 
         $("#DataNascimento").datepicker({ dateFormat: 'dd/mm/yyyy', language: "pt-BR" });
-
-       
-        //alert('Teste');
-
-        //$("#DataNascimento").val('12/12/2002');
-
-        // $("#DataNascimento").change(function () {
-
-        //     if ($("#DataNascimento").val() == '' || moment($("#DataNascimento").val(), "DD/MM/YYYY").toDate() == null) return;
-
-        //     $("#DataNascimento").data('datepicker').selectDate(moment($("#DataNascimento").val(), "DD/MM/YYYY").toDate());
-        //     //moment($("#redeDtInicioInput").val(), "DD/MM/YYYY").format('YYYY-MM-DD')
-        // });
 
     });
 
