@@ -1,5 +1,5 @@
 # ClienteRaizen
-Solução exemplo com ASP.NET MVC Core 6 , ORM Dapper , Divisão de responsabilidade de Camadas, FluentValidation, Dependency Injection, AutoMapper
+Solução exemplo com ASP.NET MVC .NET 7 , ORM Dapper , Divisão de responsabilidade de Camadas, FluentValidation, Dependency Injection, AutoMapper
 
 - Para rodar o projeto , seguir os passos nesta ordem :
 1. Instalar Sql Server Express 2012 ou versão posterior
