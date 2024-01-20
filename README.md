@@ -3,5 +3,6 @@ Solução exemplo com ASP.NET MVC .NET 7 , ORM Dapper , Divisão de responsabili
 
 - Para rodar o projeto , seguir os passos nesta ordem :
 1. Instalar Sql Server Express 2012 ou versão posterior
-2. Abrir o arquivo appsettings.json do projeto Raizen.Cliente.Presentation e localizar a chave ConnectionStringDB e mudar para sua string de conexao local.
-3. Rodar em Visual Studo 2022 ou superior
+2. Rodar o script CREATE_DATABASE_TABLE.sql
+3. Abrir o arquivo appsettings.json do projeto Raizen.Cliente.Presentation e localizar a chave ConnectionStringDB e mudar para sua string de conexao local.
+4. Rodar em Visual Studo 2022 ou superior
