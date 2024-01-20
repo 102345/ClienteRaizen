@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Raizen.Cliente.Application.Contracts;
 using Raizen.Cliente.Application.Services;
 
@@ -59,6 +60,8 @@ namespace Raizen.Cliente.Presentation.Controllers
 
             var cliente = _mapper.Map<ClienteModel, Domain.Entities.Cliente>(clienteModel);
 
+            if (cliente.Complemento.IsNullOrEmpty()) cliente.Complemento = string.Empty;
+
             var ret = _clienteService.Insert(cliente);
 
             return RedirectToRoute(new { controller = "Cliente", action = "Index" });
@@ -95,6 +98,8 @@ namespace Raizen.Cliente.Presentation.Controllers
 
 
             var cliente = _mapper.Map<ClienteModel, Domain.Entities.Cliente>(clienteModel);
+
+            if (cliente.Complemento.IsNullOrEmpty()) cliente.Complemento = string.Empty;
 
             var ret = _clienteService.Update(cliente);
 

@@ -31,7 +31,7 @@
                  <span asp-validation-for="Nome" class="alert-danger"></span>
             </div>
             <div class="col">
-                <input type="text" id="DataNascimento" name="DataNascimento" asp-for="DataNascimento" class="form-control" />
+                <input type="text" id="DataNascimento" name="DataNascimento" asp-for="DataNascimento" class="datepicker-here" data-position="right top" />
                 <span asp-validation-for="DataNascimento" class="alert-danger"></span>
             </div>
         </div>
@@ -138,11 +138,18 @@
 
     document.addEventListener('DOMContentLoaded', () => {
 
+        Inputmask("datetime", {
+            inputFormat: "dd/mm/yyyy";
+            placeholder: "__/__/____"
+        }).mask("#DataNascimento");
+
+
         $("#DataNascimento").datepicker({ dateFormat: 'dd/mm/yyyy', language: "pt-BR" });
 
-        // Inputmask("datetime", {
-        //     inputFormat: "dd/mm/yyyy"
-        // }).mask("#DataNascimento");
+       
+        //alert('Teste');
+
+        //$("#DataNascimento").val('12/12/2002');
 
         // $("#DataNascimento").change(function () {
 
